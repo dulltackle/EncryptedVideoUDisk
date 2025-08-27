@@ -42,7 +42,7 @@
       <!-- 医学主题背景图案 -->
       <div class="medical-pattern"></div>
     </div>
-    
+
     <!-- 主内容 -->
     <div class="splash-content">
       <!-- Logo区域 -->
@@ -58,7 +58,7 @@
         <h1 class="app-title">医学技术培训系统</h1>
         <p class="app-subtitle">Medical Training Video System</p>
       </div>
-      
+
       <!-- 加载区域 -->
       <div class="loading-section">
         <div class="loading-spinner">
@@ -69,7 +69,7 @@
           <div class="progress-bar" :style="{ width: progress + '%' }"></div>
         </div>
       </div>
-      
+
       <!-- 版本信息 -->
       <div class="version-info">
         <p>版本 {{ version }} | 安全加密</p>
@@ -104,7 +104,7 @@
 .medical-pattern {
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(circle at 25% 25%, #2E5BBA 2px, transparent 2px),
     radial-gradient(circle at 75% 75%, #2E5BBA 2px, transparent 2px);
   background-size: 60px 60px;
@@ -211,23 +211,23 @@
     <div class="auth-background">
       <div class="security-pattern"></div>
     </div>
-    
+
     <!-- 主内容 -->
     <div class="auth-container">
       <!-- 头部区域 -->
       <div class="auth-header">
         <div class="security-icon">
           <svg viewBox="0 0 64 64" class="shield-icon">
-            <path d="M32 8 L48 16 L48 32 C48 44 32 56 32 56 C32 56 16 44 16 32 L16 16 Z" 
+            <path d="M32 8 L48 16 L48 32 C48 44 32 56 32 56 C32 56 16 44 16 32 L16 16 Z"
                   fill="none" stroke="#2E5BBA" stroke-width="3"/>
-            <path d="M24 28 L30 34 L40 24" stroke="#10B981" stroke-width="3" 
+            <path d="M24 28 L30 34 L40 24" stroke="#10B981" stroke-width="3"
                   fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <h1 class="auth-title">安全验证</h1>
         <p class="auth-description">请输入访问密码以继续使用</p>
       </div>
-      
+
       <!-- 密码输入区域 -->
       <div class="auth-form">
         <el-form @submit.prevent="handleLogin">
@@ -250,13 +250,13 @@
               </template>
             </el-input>
           </el-form-item>
-          
+
           <!-- 错误提示 -->
           <div v-if="errorMessage" class="error-alert">
             <el-icon class="error-icon"><WarningFilled /></el-icon>
             <span class="error-text">{{ errorMessage }}</span>
           </div>
-          
+
           <!-- 提交按钮 -->
           <el-form-item class="submit-item">
             <el-button
@@ -274,7 +274,7 @@
           </el-form-item>
         </el-form>
       </div>
-      
+
       <!-- 底部提示 -->
       <div class="auth-footer">
         <div class="security-tips">
@@ -309,7 +309,7 @@
 .security-pattern {
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(45deg, #2E5BBA 25%, transparent 25%),
     linear-gradient(-45deg, #2E5BBA 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, #2E5BBA 75%),
@@ -462,7 +462,7 @@
           </h1>
           <p class="page-subtitle">共 {{ totalVideos }} 个培训视频</p>
         </div>
-        
+
         <!-- 操作区域 -->
         <div class="action-section">
           <!-- 搜索框 -->
@@ -477,7 +477,7 @@
               <el-icon><Search /></el-icon>
             </template>
           </el-input>
-          
+
           <!-- 分类筛选 -->
           <el-select
             v-model="selectedCategory"
@@ -495,14 +495,14 @@
         </div>
       </div>
     </header>
-    
+
     <!-- 主内容区域 -->
     <main class="library-content">
       <!-- 加载状态 -->
       <div v-if="loading" class="loading-container">
         <el-skeleton :rows="6" animated class="video-skeleton" />
       </div>
-      
+
       <!-- 视频网格 -->
       <div v-else-if="filteredVideos.length > 0" class="video-grid">
         <div
@@ -527,14 +527,14 @@
             <div class="video-duration">{{ formatDuration(video.duration) }}</div>
             <div class="video-quality">{{ video.quality || 'HD' }}</div>
           </div>
-          
+
           <!-- 视频信息 -->
           <div class="video-info">
             <h3 class="video-title" :title="video.title">{{ video.title }}</h3>
             <p class="video-description" :title="video.description">
               {{ video.description }}
             </p>
-            
+
             <!-- 视频元数据 -->
             <div class="video-meta">
               <div class="meta-row">
@@ -563,7 +563,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- 空状态 -->
       <div v-else class="empty-state">
         <div class="empty-icon">
@@ -578,7 +578,7 @@
         </el-button>
       </div>
     </main>
-    
+
     <!-- 底部状态栏 -->
     <footer class="library-footer">
       <div class="footer-content">
@@ -592,7 +592,7 @@
             安全加密传输
           </span>
         </div>
-        
+
         <div class="action-buttons">
           <el-button size="large" @click="refreshList">
             <el-icon><Refresh /></el-icon>
@@ -931,26 +931,26 @@
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .action-section {
     width: 100%;
     flex-direction: column;
   }
-  
+
   .search-input,
   .category-select {
     width: 100%;
   }
-  
+
   .video-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .footer-content {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .status-info {
     flex-direction: column;
     gap: 8px;
@@ -985,7 +985,7 @@
           @ended="onVideoEnded"
           @error="onVideoError"
         ></video>
-        
+
         <!-- 加载遮罩 -->
         <div v-if="loading" class="loading-overlay">
           <div class="loading-spinner">
@@ -993,7 +993,7 @@
           </div>
           <p class="loading-text">{{ loadingText }}</p>
         </div>
-        
+
         <!-- 播放状态指示器 -->
         <div v-if="showPlayIndicator" class="play-indicator" :class="{ playing: isPlaying }">
           <el-icon class="indicator-icon">
@@ -1001,7 +1001,7 @@
             <VideoPause v-else />
           </el-icon>
         </div>
-        
+
         <!-- 错误提示 -->
         <div v-if="error" class="error-overlay">
           <div class="error-content">
@@ -1014,7 +1014,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- 控制栏 -->
       <div class="control-bar" :class="{ visible: showControls }">
         <!-- 进度条区域 -->
@@ -1033,7 +1033,7 @@
             class="progress-slider"
           />
         </div>
-        
+
         <!-- 控制按钮区域 -->
         <div class="control-buttons">
           <!-- 左侧按钮组 -->
@@ -1047,7 +1047,7 @@
               @click="togglePlayPause"
               class="play-button"
             />
-            
+
             <!-- 音量控制 -->
             <div class="volume-control">
               <el-button
@@ -1069,7 +1069,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- 中间信息 -->
           <div class="video-info-center">
             <h3 class="video-title-display">{{ currentVideo.title }}</h3>
@@ -1084,7 +1084,7 @@
               </span>
             </div>
           </div>
-          
+
           <!-- 右侧按钮组 -->
           <div class="button-group right">
             <!-- 倍速控制 -->
@@ -1101,7 +1101,7 @@
               <el-option label="1.5x" :value="1.5" />
               <el-option label="2.0x" :value="2.0" />
             </el-select>
-            
+
             <!-- 全屏按钮 -->
             <el-button
               :icon="isFullscreen ? OffScreen : FullScreen"
@@ -1110,7 +1110,7 @@
               @click="toggleFullscreen"
               class="fullscreen-button"
             />
-            
+
             <!-- 返回按钮 -->
             <el-button
               icon="Back"
@@ -1124,7 +1124,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- 侧边信息面板（非全屏时显示） -->
     <div v-if="!isFullscreen" class="info-panel">
       <!-- 视频信息 -->
@@ -1151,7 +1151,7 @@
           <span>{{ formatFileSize(currentVideo.fileSize) }}</span>
         </div>
       </div>
-      
+
       <!-- 相关视频 -->
       <div class="related-videos" v-if="relatedVideos.length > 0">
         <h3 class="related-title">相关视频</h3>
@@ -1540,7 +1540,7 @@
   .video-player-screen {
     flex-direction: column;
   }
-  
+
   .info-panel {
     width: 100%;
     max-height: 300px;
@@ -1552,12 +1552,12 @@
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .video-info-center {
     margin: 0;
     order: -1;
   }
-  
+
   .button-group {
     justify-content: center;
   }
@@ -1590,12 +1590,12 @@
           </el-icon>
         </div>
       </div>
-      
+
       <!-- 错误信息 -->
       <div class="error-content">
         <h1 class="error-title">{{ errorTitle }}</h1>
         <p class="error-message">{{ errorMessage }}</p>
-        
+
         <!-- 解决方案 -->
         <div v-if="solutions.length > 0" class="error-solutions">
           <h3 class="solutions-title">建议解决方案：</h3>
@@ -1606,7 +1606,7 @@
           </ul>
         </div>
       </div>
-      
+
       <!-- 操作按钮 -->
       <div class="error-actions">
         <el-button
@@ -1619,7 +1619,7 @@
           <el-icon><Refresh /></el-icon>
           重试
         </el-button>
-        
+
         <el-button
           v-if="showGoBack"
           size="large"
@@ -1629,7 +1629,7 @@
           <el-icon><Back /></el-icon>
           返回上一页
         </el-button>
-        
+
         <el-button
           v-if="showGoHome"
           size="large"
@@ -1639,7 +1639,7 @@
           <el-icon><HomeFilled /></el-icon>
           返回首页
         </el-button>
-        
+
         <el-button
           v-if="showExit"
           type="danger"
@@ -1651,7 +1651,7 @@
           退出程序
         </el-button>
       </div>
-      
+
       <!-- 技术支持信息 -->
       <div class="support-info">
         <p class="support-text">
@@ -1798,20 +1798,20 @@
   .error-container {
     padding: 32px 24px;
   }
-  
+
   .error-title {
     font-size: 24px;
   }
-  
+
   .error-message {
     font-size: 16px;
   }
-  
+
   .error-actions {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .action-button {
     width: 100%;
     max-width: 280px;
@@ -1843,5 +1843,3 @@
 2. **键盘导航**：支持Tab键导航和快捷键
 3. **无障碍支持**：语义化标签、屏幕阅读器兼容
 4. **性能优化**：懒加载、图片优化、动画性能
-
-这套界面设计将为加密视频U盘项目提供专业、易用、安全的用户体验，特别适合年龄较大的医生学员使用。
