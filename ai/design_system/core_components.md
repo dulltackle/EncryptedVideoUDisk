@@ -28,13 +28,13 @@ import { ElConfigProvider } from 'element-plus'
 export const globalConfig = {
   // 尺寸配置 - 适老化放大
   size: 'large', // 默认使用大尺寸
-  
+
   // 层级配置
   zIndex: 3000,
-  
+
   // 命名空间
   namespace: 'el',
-  
+
   // 按钮配置
   button: {
     autoInsertSpace: true
@@ -55,21 +55,21 @@ export const globalConfig = {
   --el-color-primary-light-8: #B8C6E5;
   --el-color-primary-light-9: #D7E0EF;
   --el-color-primary-dark-2: #1E3A8A;
-  
+
   // 成功色
   --el-color-success: #10B981;
   --el-color-warning: #F59E0B;
   --el-color-danger: #EF4444;
   --el-color-error: #EF4444;
   --el-color-info: #6B7280;
-  
+
   // 文字颜色
   --el-text-color-primary: #1F2937;
   --el-text-color-regular: #374151;
   --el-text-color-secondary: #6B7280;
   --el-text-color-placeholder: #9CA3AF;
   --el-text-color-disabled: #D1D5DB;
-  
+
   // 边框颜色
   --el-border-color: #E5E7EB;
   --el-border-color-light: #F3F4F6;
@@ -77,12 +77,12 @@ export const globalConfig = {
   --el-border-color-extra-light: #FAFAFA;
   --el-border-color-dark: #D1D5DB;
   --el-border-color-darker: #9CA3AF;
-  
+
   // 背景色
   --el-bg-color: #FFFFFF;
   --el-bg-color-page: #F9FAFB;
   --el-bg-color-overlay: #FFFFFF;
-  
+
   // 字体大小 - 适老化调整
   --el-font-size-extra-large: 32px;
   --el-font-size-large: 24px;
@@ -90,13 +90,13 @@ export const globalConfig = {
   --el-font-size-base: 18px;
   --el-font-size-small: 16px;
   --el-font-size-extra-small: 14px;
-  
+
   // 圆角
   --el-border-radius-base: 4px;
   --el-border-radius-small: 2px;
   --el-border-radius-round: 20px;
   --el-border-radius-circle: 100%;
-  
+
   // 阴影
   --el-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
   --el-box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
@@ -116,26 +116,26 @@ export const globalConfig = {
   // 最小尺寸要求
   min-width: 120px;
   min-height: 48px;
-  
+
   // 字体大小
   font-size: 16px;
   font-weight: 500;
-  
+
   // 内边距
   padding: 12px 24px;
-  
+
   // 圆角
   border-radius: 4px;
-  
+
   // 过渡效果
   transition: all 0.2s ease;
-  
+
   // 悬浮效果
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(46, 91, 186, 0.2);
   }
-  
+
   // 按下效果
   &:active {
     transform: translateY(0);
@@ -159,26 +159,6 @@ export const globalConfig = {
 }
 ```
 
-**使用示例：**
-```vue
-<template>
-  <!-- 主要操作按钮 -->
-  <el-button type="primary" size="large" class="medical-primary-btn">
-    开始播放
-  </el-button>
-  
-  <!-- 次要操作按钮 -->
-  <el-button size="large" class="medical-secondary-btn">
-    返回列表
-  </el-button>
-  
-  <!-- 危险操作按钮 -->
-  <el-button type="danger" size="large" class="medical-danger-btn">
-    退出程序
-  </el-button>
-</template>
-```
-
 ### 2. 输入框组件 (Input)
 
 **适老化定制：**
@@ -190,14 +170,14 @@ export const globalConfig = {
     font-size: 16px;
     padding: 0 16px;
     border-radius: 4px;
-    
+
     // 焦点状态
     &:focus {
       border-color: var(--el-color-primary);
       box-shadow: 0 0 0 2px rgba(46, 91, 186, 0.2);
     }
   }
-  
+
   // 输入框标签
   .el-input__label {
     font-size: 16px;
@@ -216,26 +196,6 @@ export const globalConfig = {
 }
 ```
 
-**使用示例：**
-```vue
-<template>
-  <!-- 密码输入框 -->
-  <el-input
-    v-model="password"
-    type="password"
-    size="large"
-    placeholder="请输入访问密码"
-    class="medical-password-input"
-    show-password
-    clearable
-  >
-    <template #prefix>
-      <el-icon><Lock /></el-icon>
-    </template>
-  </el-input>
-</template>
-```
-
 ### 3. 卡片组件 (Card)
 
 **医学风格定制：**
@@ -245,17 +205,17 @@ export const globalConfig = {
   border: 1px solid var(--el-border-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  
+
   // 悬浮效果
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
   }
-  
+
   .el-card__header {
     padding: 20px 24px;
     border-bottom: 1px solid var(--el-border-color-light);
-    
+
     .card-title {
       font-size: 20px;
       font-weight: 600;
@@ -263,7 +223,7 @@ export const globalConfig = {
       margin: 0;
     }
   }
-  
+
   .el-card__body {
     padding: 24px;
   }
@@ -272,7 +232,7 @@ export const globalConfig = {
 // 视频卡片特殊样式
 .medical-video-card {
   cursor: pointer;
-  
+
   .video-thumbnail {
     width: 100%;
     height: 180px;
@@ -280,7 +240,7 @@ export const globalConfig = {
     border-radius: 4px;
     margin-bottom: 16px;
   }
-  
+
   .video-info {
     .video-title {
       font-size: 18px;
@@ -289,7 +249,7 @@ export const globalConfig = {
       margin-bottom: 8px;
       line-height: 1.4;
     }
-    
+
     .video-duration {
       font-size: 14px;
       color: var(--el-text-color-secondary);
@@ -304,36 +264,36 @@ export const globalConfig = {
 ```scss
 .el-dialog {
   border-radius: 8px;
-  
+
   .el-dialog__header {
     padding: 24px 24px 16px;
-    
+
     .el-dialog__title {
       font-size: 24px;
       font-weight: 600;
       color: var(--el-text-color-primary);
     }
-    
+
     .el-dialog__headerbtn {
       width: 48px;
       height: 48px;
-      
+
       .el-dialog__close {
         font-size: 20px;
       }
     }
   }
-  
+
   .el-dialog__body {
     padding: 16px 24px 24px;
     font-size: 16px;
     line-height: 1.6;
   }
-  
+
   .el-dialog__footer {
     padding: 16px 24px 24px;
     text-align: right;
-    
+
     .el-button {
       margin-left: 16px;
     }
@@ -348,7 +308,7 @@ export const globalConfig = {
     margin-bottom: 16px;
     text-align: center;
   }
-  
+
   .dialog-message {
     font-size: 18px;
     text-align: center;
@@ -366,30 +326,30 @@ export const globalConfig = {
   padding: 16px 20px;
   font-size: 16px;
   border-radius: 6px;
-  
+
   .el-message__icon {
     font-size: 20px;
     margin-right: 12px;
   }
-  
+
   .el-message__content {
     line-height: 1.5;
   }
-  
+
   // 成功消息
   &.el-message--success {
     background-color: #F0F9FF;
     border: 1px solid #10B981;
     color: #065F46;
   }
-  
+
   // 错误消息
   &.el-message--error {
     background-color: #FEF2F2;
     border: 1px solid #EF4444;
     color: #991B1B;
   }
-  
+
   // 警告消息
   &.el-message--warning {
     background-color: #FFFBEB;
@@ -405,18 +365,18 @@ export const globalConfig = {
 ```scss
 .el-loading-mask {
   background-color: rgba(255, 255, 255, 0.9);
-  
+
   .el-loading-spinner {
     .el-loading-text {
       font-size: 16px;
       color: var(--el-text-color-primary);
       margin-top: 16px;
     }
-    
+
     .circular {
       width: 48px;
       height: 48px;
-      
+
       .path {
         stroke: var(--el-color-primary);
         stroke-width: 3;
@@ -435,7 +395,7 @@ export const globalConfig = {
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
-  
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -460,7 +420,7 @@ export const globalConfig = {
         @timeupdate="onTimeUpdate"
         @ended="onVideoEnded"
       ></video>
-      
+
       <!-- 播放控制栏 -->
       <div class="video-controls" v-show="showControls">
         <!-- 进度条 -->
@@ -473,7 +433,7 @@ export const globalConfig = {
             class="video-progress"
           />
         </div>
-        
+
         <!-- 控制按钮 -->
         <div class="control-buttons">
           <!-- 播放/暂停 -->
@@ -485,7 +445,7 @@ export const globalConfig = {
             @click="togglePlay"
             class="play-btn"
           />
-          
+
           <!-- 音量控制 -->
           <div class="volume-control">
             <el-button
@@ -501,7 +461,7 @@ export const globalConfig = {
               class="volume-slider"
             />
           </div>
-          
+
           <!-- 倍速控制 -->
           <el-select
             v-model="playbackRate"
@@ -515,7 +475,7 @@ export const globalConfig = {
             <el-option label="1.5x" :value="1.5" />
             <el-option label="2.0x" :value="2.0" />
           </el-select>
-          
+
           <!-- 全屏按钮 -->
           <el-button
             :icon="Fullscreen"
@@ -616,7 +576,7 @@ export const globalConfig = {
       <el-icon class="lock-icon"><Lock /></el-icon>
       <h3 class="password-title">请输入访问密码</h3>
     </div>
-    
+
     <el-form @submit.prevent="handleSubmit">
       <el-form-item>
         <el-input
@@ -635,7 +595,7 @@ export const globalConfig = {
           </template>
         </el-input>
       </el-form-item>
-      
+
       <el-form-item>
         <el-button
           type="primary"
@@ -647,7 +607,7 @@ export const globalConfig = {
           {{ loading ? '验证中...' : '确认' }}
         </el-button>
       </el-form-item>
-      
+
       <div v-if="errorMessage" class="error-message">
         <el-icon><WarningFilled /></el-icon>
         {{ errorMessage }}
@@ -720,7 +680,7 @@ export const globalConfig = {
         共 {{ videoList.length }} 个视频
       </div>
     </div>
-    
+
     <div class="video-grid">
       <el-card
         v-for="video in videoList"
@@ -736,7 +696,7 @@ export const globalConfig = {
           />
           <div class="video-duration">{{ formatDuration(video.duration) }}</div>
         </div>
-        
+
         <div class="video-info">
           <h3 class="video-title">{{ video.title }}</h3>
           <p class="video-description">{{ video.description }}</p>
@@ -861,61 +821,6 @@ export const globalConfig = {
 </style>
 ```
 
-## 组件使用指南
-
-### 1. 组件导入和注册
-
-```typescript
-// main.ts
-import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-import './theme/element-plus.scss' // 自定义主题
-
-const app = createApp(App)
-app.use(ElementPlus, globalConfig)
-```
-
-### 2. 组件使用最佳实践
-
-**按钮使用：**
-```vue
-<!-- 主要操作 -->
-<el-button type="primary" size="large">确认操作</el-button>
-
-<!-- 次要操作 -->
-<el-button size="large">取消</el-button>
-
-<!-- 危险操作 -->
-<el-button type="danger" size="large">删除</el-button>
-```
-
-**表单使用：**
-```vue
-<el-form :model="form" label-width="120px" size="large">
-  <el-form-item label="用户名">
-    <el-input v-model="form.username" placeholder="请输入用户名" />
-  </el-form-item>
-</el-form>
-```
-
-### 3. 响应式适配
-
-```scss
-// 移动端适配
-@media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .el-button {
-    min-width: 100px;
-    min-height: 44px;
-  }
-}
-```
-
 ## 组件测试规范
 
 ### 1. 可访问性测试
@@ -938,5 +843,3 @@ app.use(ElementPlus, globalConfig)
 - 不同分辨率屏幕
 - 不同浏览器内核
 - 触摸屏设备
-
-这套组件库将为加密视频U盘项目提供一致、易用、专业的用户界面组件，特别针对年龄较大的医生学员进行了优化设计。
