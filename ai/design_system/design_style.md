@@ -216,20 +216,20 @@
   --primary-dark: #1E3A8A;
   --primary-light: #3B82F6;
   --primary-lighter: #EBF4FF;
-  
+
   /* 功能色 */
   --success-color: #10B981;
   --warning-color: #F59E0B;
   --error-color: #EF4444;
   --info-color: #6B7280;
-  
+
   /* 中性色 */
   --text-primary: #1F2937;
   --text-secondary: #4B5563;
   --text-tertiary: #9CA3AF;
   --bg-primary: #FFFFFF;
   --bg-secondary: #F9FAFB;
-  
+
   /* 字体大小 */
   --font-size-xl: 32px;
   --font-size-lg: 24px;
@@ -237,7 +237,7 @@
   --font-size-base: 18px;
   --font-size-sm: 16px;
   --font-size-xs: 14px;
-  
+
   /* 间距 */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -273,5 +273,3 @@
 2. **字体规格一致性**
 3. **间距规范一致性**
 4. **交互模式一致性**
-
-这套设计风格将确保加密视频U盘项目具有专业、可信、易用的视觉体验，特别适合年龄较大的医生学员使用。
