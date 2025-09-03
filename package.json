@@ -1,0 +1,48 @@
+{
+  "name": "encrypted-video-udisk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "加密视频U盘应用 - Electron + Vue3 + TypeScript",
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "prepare": "echo 'prepare stage'",
+    "dev": "echo 'dev script will be added in T9' && exit 0",
+    "build": "echo 'build script will be added in T11' && exit 0",
+    "lint": "echo 'lint will be added in T4' && exit 0",
+    "typecheck": "echo 'typecheck will be added in T3' && exit 0"
+  },
+  "keywords": [
+    "electron",
+    "vue3",
+    "vite",
+    "typescript",
+    "element-plus",
+    "windows",
+    "video",
+    "encryption"
+  ],
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "0.12.15",
+    "crypto-js": "4.2.0",
+    "electron": "22.3.27",
+    "element-plus": "2.11.1",
+    "node-forge": "1.3.1",
+    "pinia": "2.3.1",
+    "video.js": "8.23.4",
+    "vue": "3.5.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "4.6.2",
+    "electron-builder": "24.13.3",
+    "terser": "5.44.0",
+    "typescript": "5.9.2",
+    "vite": "4.5.14"
+  }
+}

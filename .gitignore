@@ -1,0 +1,27 @@
+# Node
+node_modules/
+.npmrc
+npm-debug.log*
+
+# Logs
+logs
+*.log
+
+# Build outputs
+/dist/
+/build/
+/out/
+
+# Vite/Electron caches
+.vite/
+.cache/
+.electron/
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Env files
+.env
+.env.*
