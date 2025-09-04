@@ -160,7 +160,7 @@ graph TD
 
 **输入契约**:
 - 前置依赖: T3 (TypeScript配置), T4 (代码质量工具配置)
-- 输入数据: Electron 版本要求 (^25.0.0)
+- 输入数据: Electron 版本要求 (22.3.27)
 - 环境依赖: Electron 运行时
 
 **输出契约**:
@@ -176,7 +176,7 @@ graph TD
   - [ ] 窗口管理功能正常
 
 **实现约束**:
-- 技术栈: Electron ^25.0.0, TypeScript
+- 技术栈: Electron 22.3.27, TypeScript
 - 接口规范: Electron 安全最佳实践
 - 质量要求: 启用上下文隔离和沙箱模式
 

@@ -243,7 +243,7 @@ interface PlaybackState {
 ```json
 {
   "dependencies": {
-    "electron": "^27.0.0",
+    "electron": "22.3.27",
     "vue": "^3.3.0",
     "pinia": "^2.1.0",
     "element-plus": "^2.4.0",
