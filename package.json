@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "description": "加密视频U盘应用 - Electron + Vue3 + TypeScript",
-  "author": "",
+  "author": "dulltackle",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dulltackle/EncryptedVideoUDisk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dulltackle/EncryptedVideoUDisk/issues"
+  },
+  "homepage": "https://github.com/dulltackle/EncryptedVideoUDisk",
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"

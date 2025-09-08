@@ -5,13 +5,15 @@
 本清单用于人工评审阶段逐项处理，规则：一次只处理一个条目；每项需有「解决方案」「验证步骤」「标记已修复」三部分。
 
 ## A. 待办事项（必补齐）
-1) 补充项目元信息
+1) 补充项目元信息 ✅ 已修复
    - 现状：package.json 中 author/repository/bugs/homepage 为空
-   - 建议：
-     - author 示例："Your Name <you@example.com>"
-     - repository：{"type":"git","url":"git+https://your.repo.url.git"}
-     - bugs/homepage：指向 issue 与主页
-   - 验证：字段补齐后通过 npm pkg get 验证
+   - 解决方案：已更新 package.json 添加完整元信息
+     - author: "dulltackle"
+     - repository: {"type":"git","url":"git+https://github.com/dulltackle/EncryptedVideoUDisk.git"}
+     - bugs: {"url":"https://github.com/dulltackle/EncryptedVideoUDisk/issues"}
+     - homepage: "https://github.com/dulltackle/EncryptedVideoUDisk"
+   - 验证步骤：npm pkg get author repository bugs homepage
+   - 验证结果：✅ 所有字段正确设置并通过验证
 
 2) 新增 LICENSE 文件
    - 现状：package.json license 为 MIT，但缺少 LICENSE 文件
