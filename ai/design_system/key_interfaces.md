@@ -28,6 +28,7 @@
 ## 1. 启动界面 (Splash Screen)
 
 ### 设计目标
+
 - 展示应用品牌和加载状态
 - 给用户专业、安全的第一印象
 - 提供清晰的加载反馈
@@ -50,9 +51,20 @@
         <div class="app-logo">
           <svg class="logo-icon" viewBox="0 0 64 64">
             <!-- 医学十字 + 视频播放图标 -->
-            <path d="M32 8 L32 56 M8 32 L56 32" stroke="#2E5BBA" stroke-width="4"/>
-            <circle cx="32" cy="32" r="20" fill="none" stroke="#2E5BBA" stroke-width="2"/>
-            <polygon points="28,24 28,40 40,32" fill="#2E5BBA"/>
+            <path
+              d="M32 8 L32 56 M8 32 L56 32"
+              stroke="#2E5BBA"
+              stroke-width="4"
+            />
+            <circle
+              cx="32"
+              cy="32"
+              r="20"
+              fill="none"
+              stroke="#2E5BBA"
+              stroke-width="2"
+            />
+            <polygon points="28,24 28,40 40,32" fill="#2E5BBA" />
           </svg>
         </div>
         <h1 class="app-title">医学技术培训系统</h1>
@@ -85,7 +97,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +117,8 @@
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(circle at 25% 25%, #2E5BBA 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, #2E5BBA 2px, transparent 2px);
+    radial-gradient(circle at 25% 25%, #2e5bba 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #2e5bba 2px, transparent 2px);
   background-size: 60px 60px;
 }
 
@@ -133,13 +145,13 @@
 .app-title {
   font-size: 32px;
   font-weight: 600;
-  color: #1F2937;
+  color: #1f2937;
   margin: 0 0 8px 0;
 }
 
 .app-subtitle {
   font-size: 16px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0;
 }
 
@@ -154,16 +166,20 @@
 .spinner-ring {
   width: 48px;
   height: 48px;
-  border: 4px solid #E5E7EB;
-  border-top: 4px solid #2E5BBA;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #2e5bba;
   border-radius: 50%;
   margin: 0 auto;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-text {
@@ -175,7 +191,7 @@
 .loading-progress {
   width: 240px;
   height: 4px;
-  background: #E5E7EB;
+  background: #e5e7eb;
   border-radius: 2px;
   margin: 0 auto;
   overflow: hidden;
@@ -183,14 +199,14 @@
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #2E5BBA, #5B7BC7);
+  background: linear-gradient(90deg, #2e5bba, #5b7bc7);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
 
 .version-info {
   font-size: 12px;
-  color: #9CA3AF;
+  color: #9ca3af;
 }
 </style>
 ```
@@ -198,6 +214,7 @@
 ## 2. 密码验证界面 (Authentication)
 
 ### 设计目标
+
 - 简单直观的密码输入
 - 清晰的错误提示
 - 安全感的视觉设计
@@ -218,10 +235,20 @@
       <div class="auth-header">
         <div class="security-icon">
           <svg viewBox="0 0 64 64" class="shield-icon">
-            <path d="M32 8 L48 16 L48 32 C48 44 32 56 32 56 C32 56 16 44 16 32 L16 16 Z"
-                  fill="none" stroke="#2E5BBA" stroke-width="3"/>
-            <path d="M24 28 L30 34 L40 24" stroke="#10B981" stroke-width="3"
-                  fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M32 8 L48 16 L48 32 C48 44 32 56 32 56 C32 56 16 44 16 32 L16 16 Z"
+              fill="none"
+              stroke="#2E5BBA"
+              stroke-width="3"
+            />
+            <path
+              d="M24 28 L30 34 L40 24"
+              stroke="#10B981"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </div>
         <h1 class="auth-title">安全验证</h1>
@@ -289,7 +316,7 @@
 <style scoped>
 .auth-screen {
   min-height: 100vh;
-  background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,12 +337,16 @@
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(45deg, #2E5BBA 25%, transparent 25%),
-    linear-gradient(-45deg, #2E5BBA 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #2E5BBA 75%),
-    linear-gradient(-45deg, transparent 75%, #2E5BBA 75%);
+    linear-gradient(45deg, #2e5bba 25%, transparent 25%),
+    linear-gradient(-45deg, #2e5bba 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #2e5bba 75%),
+    linear-gradient(-45deg, transparent 75%, #2e5bba 75%);
   background-size: 40px 40px;
-  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  background-position:
+    0 0,
+    0 20px,
+    20px -20px,
+    -20px 0px;
 }
 
 .auth-container {
@@ -346,13 +377,13 @@
 .auth-title {
   font-size: 28px;
   font-weight: 600;
-  color: #1F2937;
+  color: #1f2937;
   margin: 0 0 12px 0;
 }
 
 .auth-description {
   font-size: 16px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0;
   line-height: 1.5;
 }
@@ -379,7 +410,7 @@
 }
 
 .input-icon {
-  color: #6B7280;
+  color: #6b7280;
   font-size: 18px;
 }
 
@@ -388,20 +419,20 @@
   align-items: center;
   gap: 8px;
   padding: 12px 16px;
-  background: #FEF2F2;
-  border: 1px solid #FECACA;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
   border-radius: 6px;
   margin-bottom: 24px;
 }
 
 .error-icon {
-  color: #EF4444;
+  color: #ef4444;
   font-size: 18px;
   flex-shrink: 0;
 }
 
 .error-text {
-  color: #991B1B;
+  color: #991b1b;
   font-size: 14px;
 }
 
@@ -426,14 +457,14 @@
   justify-content: center;
   gap: 8px;
   font-size: 14px;
-  color: #6B7280;
+  color: #6b7280;
   padding: 16px;
-  background: #F9FAFB;
+  background: #f9fafb;
   border-radius: 8px;
 }
 
 .tip-icon {
-  color: #2E5BBA;
+  color: #2e5bba;
   font-size: 16px;
 }
 </style>
@@ -442,6 +473,7 @@
 ## 3. 视频列表界面 (Video Library)
 
 ### 设计目标
+
 - 清晰展示视频信息
 - 易于浏览和选择
 - 提供必要的筛选功能
@@ -524,7 +556,9 @@
             <div class="video-overlay">
               <el-icon class="play-icon"><VideoPlay /></el-icon>
             </div>
-            <div class="video-duration">{{ formatDuration(video.duration) }}</div>
+            <div class="video-duration">
+              {{ formatDuration(video.duration) }}
+            </div>
             <div class="video-quality">{{ video.quality || 'HD' }}</div>
           </div>
 
@@ -553,9 +587,11 @@
                   {{ formatDate(video.createdAt) }}
                 </span>
                 <span class="meta-item status" :class="video.status">
-                  <el-icon><CircleCheck v-if="video.status === 'completed'" />
-                           <Loading v-else-if="video.status === 'loading'" />
-                           <Warning v-else /></el-icon>
+                  <el-icon
+                    ><CircleCheck v-if="video.status === 'completed'" />
+                    <Loading v-else-if="video.status === 'loading'" />
+                    <Warning v-else
+                  /></el-icon>
                   {{ getStatusText(video.status) }}
                 </span>
               </div>
@@ -569,9 +605,15 @@
         <div class="empty-icon">
           <el-icon><VideoCamera /></el-icon>
         </div>
-        <h3 class="empty-title">{{ searchKeyword ? '未找到相关视频' : '暂无视频' }}</h3>
+        <h3 class="empty-title">
+          {{ searchKeyword ? '未找到相关视频' : '暂无视频' }}
+        </h3>
         <p class="empty-description">
-          {{ searchKeyword ? '请尝试其他关键词或清除筛选条件' : '请联系管理员添加培训视频' }}
+          {{
+            searchKeyword
+              ? '请尝试其他关键词或清除筛选条件'
+              : '请联系管理员添加培训视频'
+          }}
         </p>
         <el-button v-if="searchKeyword" @click="clearSearch" size="large">
           清除搜索
@@ -611,7 +653,7 @@
 <style scoped>
 .video-library {
   min-height: 100vh;
-  background: #F9FAFB;
+  background: #f9fafb;
   display: flex;
   flex-direction: column;
 }
@@ -619,7 +661,7 @@
 /* 头部样式 */
 .library-header {
   background: white;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
   padding: 24px 32px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -643,18 +685,18 @@
   gap: 12px;
   font-size: 28px;
   font-weight: 600;
-  color: #1F2937;
+  color: #1f2937;
   margin: 0 0 8px 0;
 }
 
 .title-icon {
-  color: #2E5BBA;
+  color: #2e5bba;
   font-size: 32px;
 }
 
 .page-subtitle {
   font-size: 16px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0;
 }
 
@@ -712,12 +754,12 @@
 .video-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-color: #2E5BBA;
+  border-color: #2e5bba;
 }
 
 .video-card:focus {
   outline: none;
-  border-color: #2E5BBA;
+  border-color: #2e5bba;
   box-shadow: 0 0 0 3px rgba(46, 91, 186, 0.2);
 }
 
@@ -780,7 +822,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #2E5BBA;
+  background: #2e5bba;
   color: white;
   padding: 2px 6px;
   border-radius: 4px;
@@ -795,7 +837,7 @@
 .video-title {
   font-size: 18px;
   font-weight: 600;
-  color: #1F2937;
+  color: #1f2937;
   margin: 0 0 8px 0;
   line-height: 1.4;
   display: -webkit-box;
@@ -806,7 +848,7 @@
 
 .video-description {
   font-size: 14px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0 0 16px 0;
   line-height: 1.5;
   display: -webkit-box;
@@ -832,26 +874,26 @@
   align-items: center;
   gap: 4px;
   font-size: 12px;
-  color: #9CA3AF;
+  color: #9ca3af;
 }
 
 .meta-item.category {
-  color: #2E5BBA;
-  background: #EEF2FF;
+  color: #2e5bba;
+  background: #eef2ff;
   padding: 2px 8px;
   border-radius: 12px;
 }
 
 .meta-item.status.completed {
-  color: #10B981;
+  color: #10b981;
 }
 
 .meta-item.status.loading {
-  color: #F59E0B;
+  color: #f59e0b;
 }
 
 .meta-item.status.error {
-  color: #EF4444;
+  color: #ef4444;
 }
 
 /* 空状态样式 */
@@ -862,7 +904,7 @@
 
 .empty-icon {
   font-size: 80px;
-  color: #D1D5DB;
+  color: #d1d5db;
   margin-bottom: 24px;
 }
 
@@ -875,7 +917,7 @@
 
 .empty-description {
   font-size: 16px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0 0 32px 0;
   line-height: 1.5;
 }
@@ -883,7 +925,7 @@
 /* 底部样式 */
 .library-footer {
   background: white;
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid #e5e7eb;
   padding: 20px 32px;
 }
 
@@ -905,7 +947,7 @@
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: #6B7280;
+  color: #6b7280;
 }
 
 .status-icon {
@@ -913,11 +955,11 @@
 }
 
 .status-icon.success {
-  color: #10B981;
+  color: #10b981;
 }
 
 .status-icon.secure {
-  color: #2E5BBA;
+  color: #2e5bba;
 }
 
 .action-buttons {
@@ -963,6 +1005,7 @@
 ## 4. 视频播放界面 (Video Player)
 
 ### 设计目标
+
 - 沉浸式播放体验
 - 简洁易用的控制界面
 - 适老化的操作设计
@@ -975,7 +1018,11 @@
     <!-- 播放器容器 -->
     <div class="player-container" :class="{ fullscreen: isFullscreen }">
       <!-- 视频区域 -->
-      <div class="video-area" @click="togglePlayPause" @dblclick="toggleFullscreen">
+      <div
+        class="video-area"
+        @click="togglePlayPause"
+        @dblclick="toggleFullscreen"
+      >
         <video
           ref="videoElement"
           class="video-element"
@@ -995,7 +1042,11 @@
         </div>
 
         <!-- 播放状态指示器 -->
-        <div v-if="showPlayIndicator" class="play-indicator" :class="{ playing: isPlaying }">
+        <div
+          v-if="showPlayIndicator"
+          class="play-indicator"
+          :class="{ playing: isPlaying }"
+        >
           <el-icon class="indicator-icon">
             <VideoPlay v-if="!isPlaying" />
             <VideoPause v-else />
@@ -1140,7 +1191,9 @@
         </div>
         <div class="detail-item">
           <label>分类：</label>
-          <span class="category-tag">{{ getCategoryName(currentVideo.category) }}</span>
+          <span class="category-tag">{{
+            getCategoryName(currentVideo.category)
+          }}</span>
         </div>
         <div class="detail-item">
           <label>时长：</label>
@@ -1162,10 +1215,16 @@
             class="related-item"
             @click="switchVideo(video)"
           >
-            <img :src="video.thumbnail" :alt="video.title" class="related-thumbnail" />
+            <img
+              :src="video.thumbnail"
+              :alt="video.title"
+              class="related-thumbnail"
+            />
             <div class="related-info">
               <h4 class="related-video-title">{{ video.title }}</h4>
-              <span class="related-duration">{{ formatDuration(video.duration) }}</span>
+              <span class="related-duration">{{
+                formatDuration(video.duration)
+              }}</span>
             </div>
           </div>
         </div>
@@ -1235,7 +1294,7 @@
   width: 60px;
   height: 60px;
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #2E5BBA;
+  border-top: 4px solid #2e5bba;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -1269,7 +1328,9 @@
 }
 
 @keyframes fadeOut {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
 
 .indicator-icon {
@@ -1298,7 +1359,7 @@
 
 .error-icon {
   font-size: 64px;
-  color: #EF4444;
+  color: #ef4444;
   margin-bottom: 20px;
 }
 
@@ -1310,7 +1371,7 @@
 
 .error-message {
   font-size: 16px;
-  color: #D1D5DB;
+  color: #d1d5db;
   margin: 0 0 24px 0;
   line-height: 1.5;
 }
@@ -1336,12 +1397,12 @@
   gap: 8px;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #D1D5DB;
+  color: #d1d5db;
 }
 
 .progress-slider {
   --el-slider-runway-bg-color: rgba(255, 255, 255, 0.3);
-  --el-slider-main-bg-color: #2E5BBA;
+  --el-slider-main-bg-color: #2e5bba;
   --el-slider-button-size: 16px;
 }
 
@@ -1409,7 +1470,7 @@
   align-items: center;
   gap: 4px;
   font-size: 14px;
-  color: #D1D5DB;
+  color: #d1d5db;
 }
 
 .speed-select {
@@ -1429,7 +1490,7 @@
 /* 信息面板样式 */
 .info-panel {
   width: 360px;
-  background: #1F2937;
+  background: #1f2937;
   padding: 24px;
   overflow-y: auto;
 }
@@ -1454,7 +1515,7 @@
 .detail-item label {
   display: block;
   font-size: 14px;
-  color: #9CA3AF;
+  color: #9ca3af;
   margin-bottom: 4px;
 }
 
@@ -1467,7 +1528,7 @@
 }
 
 .category-tag {
-  background: #2E5BBA;
+  background: #2e5bba;
   color: white;
   padding: 4px 12px;
   border-radius: 16px;
@@ -1532,7 +1593,7 @@
 
 .related-duration {
   font-size: 12px;
-  color: #9CA3AF;
+  color: #9ca3af;
 }
 
 /* 响应式设计 */
@@ -1568,6 +1629,7 @@
 ## 5. 错误处理界面 (Error Pages)
 
 ### 设计目标
+
 - 友好的错误提示
 - 清晰的解决方案指引
 - 保持品牌一致性
@@ -1600,7 +1662,11 @@
         <div v-if="solutions.length > 0" class="error-solutions">
           <h3 class="solutions-title">建议解决方案：</h3>
           <ul class="solutions-list">
-            <li v-for="(solution, index) in solutions" :key="index" class="solution-item">
+            <li
+              v-for="(solution, index) in solutions"
+              :key="index"
+              class="solution-item"
+            >
               {{ solution }}
             </li>
           </ul>
@@ -1667,7 +1733,7 @@
 <style scoped>
 .error-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1700,23 +1766,23 @@
 }
 
 .error-icon.warning {
-  background: #FEF3C7;
-  color: #F59E0B;
+  background: #fef3c7;
+  color: #f59e0b;
 }
 
 .error-icon.error {
-  background: #FEE2E2;
-  color: #EF4444;
+  background: #fee2e2;
+  color: #ef4444;
 }
 
 .error-icon.not-found {
-  background: #E0E7FF;
-  color: #6366F1;
+  background: #e0e7ff;
+  color: #6366f1;
 }
 
 .error-icon.access-denied {
-  background: #FEE2E2;
-  color: #DC2626;
+  background: #fee2e2;
+  color: #dc2626;
 }
 
 .error-content {
@@ -1726,23 +1792,23 @@
 .error-title {
   font-size: 32px;
   font-weight: 600;
-  color: #1F2937;
+  color: #1f2937;
   margin: 0 0 16px 0;
 }
 
 .error-message {
   font-size: 18px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0 0 24px 0;
   line-height: 1.6;
 }
 
 .error-solutions {
   text-align: left;
-  background: #F9FAFB;
+  background: #f9fafb;
   padding: 24px;
   border-radius: 8px;
-  border-left: 4px solid #2E5BBA;
+  border-left: 4px solid #2e5bba;
 }
 
 .solutions-title {
@@ -1759,7 +1825,7 @@
 
 .solution-item {
   font-size: 14px;
-  color: #6B7280;
+  color: #6b7280;
   margin-bottom: 8px;
   line-height: 1.5;
 }
@@ -1777,19 +1843,19 @@
 }
 
 .support-info {
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid #e5e7eb;
   padding-top: 24px;
 }
 
 .support-text {
   font-size: 14px;
-  color: #6B7280;
+  color: #6b7280;
   margin: 0 0 8px 0;
 }
 
 .error-code {
   font-size: 12px;
-  color: #9CA3AF;
+  color: #9ca3af;
   font-family: 'Courier New', monospace;
   margin: 0;
 }

@@ -20,10 +20,13 @@
   },
   "main": "index.js",
   "scripts": {
-    "prepare": "echo 'prepare stage'",
+    "prepare": "husky",
     "dev": "echo 'dev script will be added in T9' && exit 0",
     "build": "echo 'build script will be added in T11' && exit 0",
-    "lint": "echo 'lint will be added in T4' && exit 0",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "typecheck": "echo 'typecheck will be added in T3' && exit 0"
   },
   "keywords": [
@@ -47,10 +50,30 @@
     "vue": "3.5.21"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
     "@vitejs/plugin-vue": "4.6.2",
     "electron-builder": "24.13.3",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^10.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
     "terser": "5.44.0",
     "typescript": "5.9.2",
     "vite": "4.5.14"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }

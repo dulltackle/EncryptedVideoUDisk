@@ -6,23 +6,23 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    
+
     // 项目引用必需设置
     "composite": true,
-    
+
     // 浏览器环境
     "types": ["vite/client", "element-plus/global"],
     "allowJs": false,
-    
+
     // 输出配置
     "outDir": "./dist/renderer",
     "rootDir": "./src",
-    
+
     // Vue 3 支持
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
-    
+
     // 路径映射（渲染进程专用）
     "baseUrl": ".",
     "paths": {
@@ -36,20 +36,10 @@
       "@assets/*": ["src/renderer/assets/*"]
     }
   },
-  
+
   // 只包含渲染进程相关文件
-  "include": [
-    "src/renderer/**/*",
-    "src/shared/**/*",
-    "src/renderer/**/*.vue"
-  ],
-  
+  "include": ["src/renderer/**/*", "src/shared/**/*", "src/renderer/**/*.vue"],
+
   // 排除主进程文件
-  "exclude": [
-    "src/main/**/*",
-    "node_modules",
-    "dist",
-    "build",
-    "**/*.js"
-  ]
+  "exclude": ["src/main/**/*", "node_modules", "dist", "build", "**/*.js"]
 }

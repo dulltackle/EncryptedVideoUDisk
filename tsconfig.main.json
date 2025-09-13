@@ -6,21 +6,21 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "lib": ["ES2022"],
-    
+
     // 项目引用必需设置
     "composite": true,
-    
+
     // Node.js 环境
     "types": ["node", "electron"],
     "allowJs": false,
-    
+
     // 输出配置
     "outDir": "./dist/main",
     "rootDir": "./src",
-    
+
     // 主进程不需要DOM类型
     "skipLibCheck": true,
-    
+
     // 路径映射（主进程专用）
     "baseUrl": ".",
     "paths": {
@@ -28,19 +28,10 @@
       "@shared/*": ["src/shared/*"]
     }
   },
-  
+
   // 只包含主进程相关文件
-  "include": [
-    "src/main/**/*",
-    "src/shared/**/*"
-  ],
-  
+  "include": ["src/main/**/*", "src/shared/**/*"],
+
   // 排除渲染进程文件
-  "exclude": [
-    "src/renderer/**/*",
-    "node_modules",
-    "dist",
-    "build",
-    "**/*.js"
-  ]
+  "exclude": ["src/renderer/**/*", "node_modules", "dist", "build", "**/*.js"]
 }

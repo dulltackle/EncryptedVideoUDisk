@@ -1,0 +1,62 @@
+# 依赖目录
+node_modules/
+
+# 构建输出
+dist/
+build/
+out/
+
+# 缓存目录
+.cache/
+.temp/
+.tmp/
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# Git 相关
+.git/
+.gitignore
+
+# 包管理器文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 特定文件类型
+*.min.js
+*.min.css
+
+# 文档和配置文件（可选择性忽略）
+CHANGELOG.md
+LICENSE
+*.d.ts
+
+# Electron 相关
+app/
+release/
+
+# 测试覆盖率报告
+coverage/
+.nyc_output/
+
+# 其他工具生成的文件
+.eslintcache

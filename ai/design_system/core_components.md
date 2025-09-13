@@ -5,12 +5,14 @@
 ### 技术选型
 
 **基础组件库：Element Plus**
+
 - Vue 3 生态系统中最成熟的组件库
 - 丰富的组件支持和良好的可定制性
 - 完善的TypeScript支持
 - 活跃的社区和文档
 
 **定制化策略：**
+
 1. **主题定制**：通过CSS变量覆盖默认样式
 2. **尺寸放大**：适配适老化设计需求
 3. **功能简化**：移除复杂功能，保留核心交互
@@ -22,7 +24,7 @@
 
 ```typescript
 // theme/index.ts
-import { ElConfigProvider } from 'element-plus'
+import { ElConfigProvider } from 'element-plus';
 
 // 全局配置
 export const globalConfig = {
@@ -37,9 +39,9 @@ export const globalConfig = {
 
   // 按钮配置
   button: {
-    autoInsertSpace: true
-  }
-}
+    autoInsertSpace: true,
+  },
+};
 ```
 
 ### CSS变量覆盖
@@ -48,40 +50,40 @@ export const globalConfig = {
 // theme/element-plus.scss
 :root {
   // 主色调覆盖
-  --el-color-primary: #2E5BBA;
-  --el-color-primary-light-3: #5B7BC7;
-  --el-color-primary-light-5: #7A94D1;
-  --el-color-primary-light-7: #99ADDB;
-  --el-color-primary-light-8: #B8C6E5;
-  --el-color-primary-light-9: #D7E0EF;
-  --el-color-primary-dark-2: #1E3A8A;
+  --el-color-primary: #2e5bba;
+  --el-color-primary-light-3: #5b7bc7;
+  --el-color-primary-light-5: #7a94d1;
+  --el-color-primary-light-7: #99addb;
+  --el-color-primary-light-8: #b8c6e5;
+  --el-color-primary-light-9: #d7e0ef;
+  --el-color-primary-dark-2: #1e3a8a;
 
   // 成功色
-  --el-color-success: #10B981;
-  --el-color-warning: #F59E0B;
-  --el-color-danger: #EF4444;
-  --el-color-error: #EF4444;
-  --el-color-info: #6B7280;
+  --el-color-success: #10b981;
+  --el-color-warning: #f59e0b;
+  --el-color-danger: #ef4444;
+  --el-color-error: #ef4444;
+  --el-color-info: #6b7280;
 
   // 文字颜色
-  --el-text-color-primary: #1F2937;
+  --el-text-color-primary: #1f2937;
   --el-text-color-regular: #374151;
-  --el-text-color-secondary: #6B7280;
-  --el-text-color-placeholder: #9CA3AF;
-  --el-text-color-disabled: #D1D5DB;
+  --el-text-color-secondary: #6b7280;
+  --el-text-color-placeholder: #9ca3af;
+  --el-text-color-disabled: #d1d5db;
 
   // 边框颜色
-  --el-border-color: #E5E7EB;
-  --el-border-color-light: #F3F4F6;
-  --el-border-color-lighter: #F9FAFB;
-  --el-border-color-extra-light: #FAFAFA;
-  --el-border-color-dark: #D1D5DB;
-  --el-border-color-darker: #9CA3AF;
+  --el-border-color: #e5e7eb;
+  --el-border-color-light: #f3f4f6;
+  --el-border-color-lighter: #f9fafb;
+  --el-border-color-extra-light: #fafafa;
+  --el-border-color-dark: #d1d5db;
+  --el-border-color-darker: #9ca3af;
 
   // 背景色
-  --el-bg-color: #FFFFFF;
-  --el-bg-color-page: #F9FAFB;
-  --el-bg-color-overlay: #FFFFFF;
+  --el-bg-color: #ffffff;
+  --el-bg-color-page: #f9fafb;
+  --el-bg-color-overlay: #ffffff;
 
   // 字体大小 - 适老化调整
   --el-font-size-extra-large: 32px;
@@ -100,8 +102,10 @@ export const globalConfig = {
   // 阴影
   --el-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
   --el-box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  --el-box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
-  --el-box-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  --el-box-shadow-base:
+    0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  --el-box-shadow-dark:
+    0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 ```
 
@@ -110,6 +114,7 @@ export const globalConfig = {
 ### 1. 按钮组件 (Button)
 
 **适老化定制：**
+
 ```scss
 // 按钮尺寸放大
 .el-button {
@@ -162,6 +167,7 @@ export const globalConfig = {
 ### 2. 输入框组件 (Input)
 
 **适老化定制：**
+
 ```scss
 .el-input {
   // 输入框高度
@@ -199,6 +205,7 @@ export const globalConfig = {
 ### 3. 卡片组件 (Card)
 
 **医学风格定制：**
+
 ```scss
 .el-card {
   border-radius: 8px;
@@ -261,6 +268,7 @@ export const globalConfig = {
 ### 4. 对话框组件 (Dialog)
 
 **适老化定制：**
+
 ```scss
 .el-dialog {
   border-radius: 8px;
@@ -320,6 +328,7 @@ export const globalConfig = {
 ### 5. 消息提示组件 (Message)
 
 **适老化定制：**
+
 ```scss
 .el-message {
   min-width: 380px;
@@ -338,23 +347,23 @@ export const globalConfig = {
 
   // 成功消息
   &.el-message--success {
-    background-color: #F0F9FF;
-    border: 1px solid #10B981;
-    color: #065F46;
+    background-color: #f0f9ff;
+    border: 1px solid #10b981;
+    color: #065f46;
   }
 
   // 错误消息
   &.el-message--error {
-    background-color: #FEF2F2;
-    border: 1px solid #EF4444;
-    color: #991B1B;
+    background-color: #fef2f2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
   }
 
   // 警告消息
   &.el-message--warning {
-    background-color: #FFFBEB;
-    border: 1px solid #F59E0B;
-    color: #92400E;
+    background-color: #fffbeb;
+    border: 1px solid #f59e0b;
+    color: #92400e;
   }
 }
 ```
@@ -362,6 +371,7 @@ export const globalConfig = {
 ### 6. 加载组件 (Loading)
 
 **医学风格定制：**
+
 ```scss
 .el-loading-mask {
   background-color: rgba(255, 255, 255, 0.9);
@@ -390,15 +400,19 @@ export const globalConfig = {
   .loading-icon {
     width: 48px;
     height: 48px;
-    border: 3px solid #E5E7EB;
+    border: 3px solid #e5e7eb;
     border-top: 3px solid var(--el-color-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
 
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 ```
@@ -662,8 +676,8 @@ export const globalConfig = {
   font-size: 14px;
   margin-top: 16px;
   padding: 12px;
-  background: #FEF2F2;
-  border: 1px solid #FECACA;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
   border-radius: 4px;
 }
 </style>
@@ -676,9 +690,7 @@ export const globalConfig = {
   <div class="medical-video-list">
     <div class="list-header">
       <h2 class="list-title">医学技术视频</h2>
-      <div class="list-stats">
-        共 {{ videoList.length }} 个视频
-      </div>
+      <div class="list-stats">共 {{ videoList.length }} 个视频</div>
     </div>
 
     <div class="video-grid">
