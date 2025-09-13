@@ -11,6 +11,9 @@ logs
 /dist/
 /build/
 /out/
+/build/
+tsconfig.main.tsbuildinfo
+tsconfig.renderer.tsbuildinfo
 
 # Vite/Electron caches
 .vite/
