@@ -32,7 +32,7 @@ export interface ElectronAPI {
   closeWindow: () => void
   
   // 事件监听
-  onUpdateAvailable: (callback: (info: any) => void) => void
+  onUpdateAvailable: (callback: (info: { version: string; releaseNotes?: string }) => void) => void
   onUpdateDownloaded: (callback: () => void) => void
   
   // 移除监听器

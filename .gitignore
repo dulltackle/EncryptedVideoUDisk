@@ -19,6 +19,7 @@ tsconfig.renderer.tsbuildinfo
 .vite/
 .cache/
 .electron/
+.eslintcache
 
 # Editor
 .vscode/

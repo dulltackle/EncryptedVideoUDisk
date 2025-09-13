@@ -23,8 +23,9 @@
     "prepare": "husky",
     "dev": "echo 'dev script will be added in T9' && exit 0",
     "build": "echo 'build script will be added in T11' && exit 0",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
-    "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix --cache",
+    "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --cache",
+    "lint:report": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --format html --output-file eslint-report.html --cache",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "echo 'typecheck will be added in T3' && exit 0"
@@ -50,6 +51,8 @@
     "vue": "3.5.21"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
     "@vitejs/plugin-vue": "4.6.2",

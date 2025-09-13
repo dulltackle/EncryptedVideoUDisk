@@ -63,12 +63,12 @@ export interface AppState {
 export interface AppError {
   code: string
   message: string
-  details?: any
+  details?: Record<string, unknown>
   timestamp: Date
 }
 
 // 操作结果
-export interface OperationResult<T = any> {
+export interface OperationResult<T = unknown> {
   success: boolean
   data?: T
   error?: AppError
@@ -112,7 +112,7 @@ export interface ThemeConfig {
 // 组件属性基类
 export interface BaseComponentProps {
   class?: string
-  style?: string | Record<string, any>
+  style?: string | Record<string, string | number>
   disabled?: boolean
   loading?: boolean
 }
