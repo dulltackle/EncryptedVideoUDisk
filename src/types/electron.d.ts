@@ -46,30 +46,30 @@ declare global {
   }
 }
 
-// IPC 通道常量
-export const IPC_CHANNELS = {
+// IPC 通道常量枚举
+export enum IPC_CHANNELS {
   // 文件操作
-  OPEN_FILE: 'file:open',
-  SAVE_FILE: 'file:save',
+  OPEN_FILE = 'file:open',
+  SAVE_FILE = 'file:save',
   
   // 视频处理
-  ENCRYPT_VIDEO: 'video:encrypt',
-  DECRYPT_VIDEO: 'video:decrypt',
+  ENCRYPT_VIDEO = 'video:encrypt',
+  DECRYPT_VIDEO = 'video:decrypt',
   
   // 系统信息
-  GET_SYSTEM_INFO: 'system:info',
+  GET_SYSTEM_INFO = 'system:info',
   
   // 窗口控制
-  WINDOW_MINIMIZE: 'window:minimize',
-  WINDOW_MAXIMIZE: 'window:maximize',
-  WINDOW_CLOSE: 'window:close',
+  WINDOW_MINIMIZE = 'window:minimize',
+  WINDOW_MAXIMIZE = 'window:maximize',
+  WINDOW_CLOSE = 'window:close',
   
   // 更新事件
-  UPDATE_AVAILABLE: 'update:available',
-  UPDATE_DOWNLOADED: 'update:downloaded'
-} as const
+  UPDATE_AVAILABLE = 'update:available',
+  UPDATE_DOWNLOADED = 'update:downloaded'
+}
 
 // IPC 消息类型
-export type IPCChannel = typeof IPC_CHANNELS[keyof typeof IPC_CHANNELS]
+export type IPCChannel = IPC_CHANNELS
 
 export {}
