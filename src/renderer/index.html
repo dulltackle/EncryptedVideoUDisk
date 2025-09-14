@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <title>加密视频U盘播放器</title>
+  
+  <!-- 预加载CSS变量 -->
+  <style>
+    :root {
+      /* 主色调 */
+      --primary-color: #2e5bba;
+      --primary-dark: #1e3a8a;
+      --primary-light: #3b82f6;
+      --primary-lighter: #ebf4ff;
+
+      /* 功能色 */
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --error-color: #ef4444;
+      --info-color: #6b7280;
+
+      /* 中性色 */
+      --text-primary: #1f2937;
+      --text-secondary: #4b5563;
+      --text-tertiary: #9ca3af;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --border-color: #e5e7eb;
+
+      /* 字体大小 */
+      --font-size-xl: 32px;
+      --font-size-lg: 24px;
+      --font-size-md: 20px;
+      --font-size-base: 18px;
+      --font-size-sm: 16px;
+      --font-size-xs: 14px;
+
+      /* 间距 */
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 32px;
+      --spacing-xxl: 48px;
+    }
+
+    /* 基础样式重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
+      font-size: var(--font-size-sm);
+      line-height: 1.5;
+      color: var(--text-primary);
+      background-color: var(--bg-secondary);
+      overflow: hidden;
+    }
+
+    #app {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 加载动画 */
+    .loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--border-color);
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    .loading-text {
+      font-size: var(--font-size-base);
+      color: var(--text-secondary);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 隐藏滚动条但保持滚动功能 */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-tertiary);
+    }
+  </style>
+</head>
+<body>
+  <!-- 应用挂载点 -->
+  <div id="app">
+    <!-- 初始加载动画 -->
+    <div class="loading-container" id="initial-loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">正在启动应用...</div>
+    </div>
+  </div>
+
+  <!-- 渲染进程入口脚本 -->
+  <script type="module" src="./main.ts"></script>
+  
+  <!-- 移除初始加载动画 -->
+  <script>
+    // 等待Vue应用挂载后移除初始加载动画
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loadingElement = document.getElementById('initial-loading');
+        if (loadingElement) {
+          loadingElement.style.opacity = '0';
+          loadingElement.style.transition = 'opacity 0.3s ease';
+          setTimeout(() => {
+            loadingElement.remove();
+          }, 300);
+        }
+      }, 1000); // 延迟1秒确保Vue应用完全加载
+    });
+  </script>
+</body>
+</html>
