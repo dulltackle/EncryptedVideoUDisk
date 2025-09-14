@@ -3,13 +3,12 @@
  * 负责应用生命周期管理和系统级事件处理
  */
 
-import { app, ipcMain } from 'electron';
+import { app } from 'electron';
 import { windowManager } from './window-manager';
 import { initializeSecurity } from './security';
 import { logger } from './utils';
 import { errorHandler } from './utils';
-import { getSystemInfo } from './utils';
-import { IPC_CHANNELS } from '../types/electron';
+import './ipc-handlers'; // 导入IPC处理器
 
 /**
  * 初始化应用
@@ -19,13 +18,7 @@ function initializeApp(): void {
   initializeSecurity();
 
   // 记录应用启动信息
-  const systemInfo = getSystemInfo();
-  logger.info('应用启动', {
-    version: systemInfo.appVersion,
-    platform: systemInfo.platform,
-    nodeVersion: systemInfo.nodeVersion,
-    electronVersion: systemInfo.electronVersion,
-  });
+  logger.info('应用启动');
 
   // 创建主窗口
   windowManager.createMainWindow();
@@ -71,49 +64,7 @@ app.on('before-quit', () => {
   windowManager.destroyAllWindows();
 });
 
-/**
- * IPC 事件处理
- */
-
-// 窗口控制
-ipcMain.handle(IPC_CHANNELS.WINDOW_MINIMIZE, () => {
-  try {
-    windowManager.minimizeWindow();
-    logger.debug('窗口已最小化');
-  } catch (error) {
-    logger.error('窗口最小化失败:', error);
-  }
-});
-
-ipcMain.handle(IPC_CHANNELS.WINDOW_MAXIMIZE, () => {
-  try {
-    windowManager.toggleMaximizeWindow();
-    logger.debug('窗口最大化状态已切换');
-  } catch (error) {
-    logger.error('窗口最大化失败:', error);
-  }
-});
-
-ipcMain.handle(IPC_CHANNELS.WINDOW_CLOSE, () => {
-  try {
-    windowManager.closeWindow();
-    logger.debug('窗口关闭请求已处理');
-  } catch (error) {
-    logger.error('窗口关闭失败:', error);
-  }
-});
-
-// 系统信息
-ipcMain.handle(IPC_CHANNELS.GET_SYSTEM_INFO, () => {
-  try {
-    const systemInfo = getSystemInfo();
-    logger.debug('系统信息已获取');
-    return systemInfo;
-  } catch (error) {
-    logger.error('获取系统信息失败:', error);
-    throw error;
-  }
-});
+// IPC处理器已在 ./ipc-handlers.ts 中实现
 
 // 应用级错误处理
 errorHandler.onError(error => {

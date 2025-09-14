@@ -81,11 +81,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-// import { useAppStore } from '@/stores/app'; // 暂时注释，待创建stores
 import { ElMessage } from 'element-plus';
+import { useWindowControls } from './ipc-client';
 
-// 状态管理 - 暂时注释，待创建stores
-// const appStore = useAppStore();
+// 使用IPC客户端
+const windowControls = useWindowControls();
 
 // 响应式数据
 const isMaximized = ref(false);
@@ -96,11 +96,8 @@ const globalError = ref('');
 // 窗口控制方法
 const minimizeWindow = async (): Promise<void> => {
   try {
-    // TODO: 待T7 IPC通信协议完成后启用
-    // if (window.electronAPI) {
-    //   await window.electronAPI.invoke('window-minimize');
-    // }
-    console.log('最小化窗口');
+    await windowControls.minimize();
+    console.log('窗口已最小化');
   } catch (error) {
     console.error('窗口最小化失败:', error);
     showError('窗口操作失败');
@@ -109,13 +106,9 @@ const minimizeWindow = async (): Promise<void> => {
 
 const toggleMaximizeWindow = async (): Promise<void> => {
   try {
-    // TODO: 待T7 IPC通信协议完成后启用
-    // if (window.electronAPI) {
-    //   await window.electronAPI.invoke('window-maximize');
-    //   isMaximized.value = !isMaximized.value;
-    // }
+    await windowControls.maximize();
     isMaximized.value = !isMaximized.value;
-    console.log('切换窗口最大化状态:', isMaximized.value);
+    console.log('窗口最大化状态已切换:', isMaximized.value);
   } catch (error) {
     console.error('窗口最大化失败:', error);
     showError('窗口操作失败');
@@ -124,11 +117,8 @@ const toggleMaximizeWindow = async (): Promise<void> => {
 
 const closeWindow = async (): Promise<void> => {
   try {
-    // TODO: 待T7 IPC通信协议完成后启用
-    // if (window.electronAPI) {
-    //   await window.electronAPI.invoke('window-close');
-    // }
-    console.log('关闭窗口');
+    await windowControls.close();
+    console.log('窗口关闭请求已发送');
   } catch (error) {
     console.error('窗口关闭失败:', error);
     showError('窗口操作失败');

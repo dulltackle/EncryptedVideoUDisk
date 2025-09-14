@@ -2,6 +2,12 @@
 
 // 主进程 API 接口
 export interface ElectronAPI {
+  // 通用 IPC 方法
+  invoke: <T = unknown>(channel: string, ...args: unknown[]) => Promise<T>
+  send: (channel: string, ...args: unknown[]) => void
+  on: (channel: string, listener: (...args: unknown[]) => void) => void
+  removeAllListeners: (channel: string) => void
+  
   // 文件操作
   openFile: () => Promise<string | null>
   saveFile: (content: string, defaultPath?: string) => Promise<string | null>
@@ -34,9 +40,6 @@ export interface ElectronAPI {
   // 事件监听
   onUpdateAvailable: (callback: (info: { version: string; releaseNotes?: string }) => void) => void
   onUpdateDownloaded: (callback: () => void) => void
-  
-  // 移除监听器
-  removeAllListeners: (channel: string) => void
 }
 
 // 渲染进程全局对象扩展
